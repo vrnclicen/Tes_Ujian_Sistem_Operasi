@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Sistem Informasi Manajemen</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+        .question-block { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #ccc; }
+        .question { font-weight: bold; margin-bottom: 10px; }
+        .options { list-style-type: none; padding-left: 0; }
+        .option { margin-bottom: 5px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
+        .option:hover { background-color: #f0f0f0; }
+        .correct { background-color: #d4edda !important; border-color: #c3e6cb !important; color: #155724; font-weight: bold; }
+        h1 { text-align: center; color: #2c3e50; }
+        .btn-toggle { display: block; width: 100%; padding: 10px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-bottom: 20px; }
+        .btn-toggle:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <h1>Latihan Soal - Sistem Informasi Manajemen (EMBS4321)</h1>
+    <button class="btn-toggle" onclick="toggleAnswers()">Tampilkan/Sembunyikan Semua Jawaban</button>
+    <div id="quiz-container"></div>
+
+    <script>
+        const rawData = `Kumpulan dari elemen-elemen yang saling berinteraksi, terintegrasi, dan bekerja sama untuk mencapai suatu tujuan tertentu dinamakan... A. Prosedur B. Sistem ✅ C. Manajemen D. Organisasi
+Daerah yang membatasi antara suatu sistem dengan sistem yang lainnya atau dengan lingkungan luarnya disebut... A. Boundary (Batas sistem) ✅ B. Environment (Lingkungan luar) C. Interface (Penghubung) D. Feedback (Umpan balik)
+Data yang telah diolah, diklasifikasikan, dan diinterpretasikan sehingga memiliki makna dan nilai bagi penerimanya untuk pengambilan keputusan disebut... A. Fakta B. Berkas C. Informasi ✅ D. Basis data
+Agar informasi berkualitas dan berguna bagi manajemen, informasi tersebut harus memenuhi kriteria utama yaitu akurat, relevan, dan... A. Mahal B. Tepat waktu (Timely) ✅ C. Dicetak di atas kertas D. Bersifat rahasia mutlak
+Komponen sistem informasi yang merujuk pada manusia pengelola, perancang, pengembang, dan pengguna sistem informasi itu sendiri dinamakan... A. Hardware B. Software C. Netware D. Brainware ✅
+Sistem informasi yang berfungsi merekam dan memproses data dari kegiatan operasional bisnis sehari-hari (seperti penjualan, penggajian, dan kasir) dinamakan... A. Management Information System (MIS) B. Transaction Processing System (TPS) ✅ C. Decision Support System (DSS) D. Executive Information System (EIS)
+Sistem informasi yang dirancang secara khusus untuk menyediakan informasi ringkas, grafik, dan indikator kinerja utama (KPI) bagi manajemen tingkat atas (direktur/CEO) dalam merumuskan strategi perusahaan adalah... A. Transaction Processing System (TPS) B. Office Automation System (OAS) C. Decision Support System (DSS) D. Executive Information System (EIS) ✅
+Sebuah sistem informasi yang interaktif dan menyediakan informasi, model manipulasi data, serta alat komunikasi untuk membantu manajer mengambil keputusan pada masalah yang semi-terstruktur disebut... A. Transaction Processing System (TPS) B. Decision Support System (DSS) ✅ C. Artificial Intelligence (AI) D. Enterprise Resource Planning (ERP)
+Sistem perangkat lunak berskala besar yang mengintegrasikan seluruh fungsi bisnis perusahaan (mulai dari produksi, SDM, keuangan, hingga distribusi) ke dalam satu basis data terpusat disebut... A. Enterprise Resource Planning (ERP) ✅ B. Supply Chain Management (SCM) C. Customer Relationship Management (CRM) D. Knowledge Management System (KMS)
+Sistem informasi bisnis yang berfokus pada pengelolaan dan peningkatan interaksi dengan pelanggan, menganalisis data riwayat pelanggan, serta meningkatkan loyalitas pelanggan adalah... A. SCM B. CRM ✅ C. ERP D. TPS
+Sistem yang mengelola aliran barang, data, dan keuangan sejak dari pemasok bahan baku, pabrik, hingga produk sampai ke tangan konsumen akhir dinamakan... A. Supply Chain Management (SCM) ✅ B. Human Resource Information System (HRIS) C. Financial Information System (FIS) D. Customer Relationship Management (CRM)
+Penggunaan teknologi komunikasi dan komputer (seperti email, video conference, dan pengolah dokumen) untuk meningkatkan produktivitas pekerja berpengetahuan dan staf administrasi di kantor dinamakan... A. Sistem Pakar B. Transaction Processing System C. Office Automation System (OAS) ✅ D. Executive Information System
+Komponen perangkat keras (hardware) utama di dalam komputer yang berfungsi sebagai otak yang memproses dan mengeksekusi instruksi program adalah... A. Random Access Memory (RAM) B. Central Processing Unit (CPU) ✅ C. Hard Disk Drive (HDD) D. Motherboard
+Memori internal komputer yang bersifat sementara (volatil) di mana data akan hilang jika aliran listrik dimatikan dinamakan... A. RAM (Random Access Memory) ✅ B. ROM (Read Only Memory) C. Flash Drive D. Optical Disk
+Berikut ini yang merupakan contoh dari perangkat lunak sistem operasi (Operating System) adalah... A. Microsoft Word, Microsoft Excel, dan PowerPoint B. Adobe Photoshop dan CorelDraw C. Windows, Linux, dan macOS ✅ D. Google Chrome dan Mozilla Firefox
+Perangkat lunak yang kode sumbernya (source code) dibuka untuk publik sehingga siapa saja dapat melihat, memodifikasi, dan mendistribusikannya secara bebas dinamakan perangkat lunak... A. Proprietary software B. Open Source software ✅ C. Shareware D. Freeware
+Kumpulan data yang saling berhubungan secara logis, diorganisasikan sedemikian rupa agar dapat diakses, dikelola, dan diperbarui dengan mudah oleh berbagai aplikasi disebut... A. Jaringan B. Database (Basis Data) ✅ C. Operating System D. Spreadsheet
+Sebuah elemen data (field) atau kombinasi elemen data yang secara unik mengidentifikasi suatu record (baris) tertentu di dalam sebuah tabel basis data disebut... A. Foreign Key B. Primary Key ✅ C. Secondary Key D. Index Key
+Model basis data yang paling banyak digunakan saat ini, yang menyimpan data ke dalam bentuk tabel dua dimensi (baris dan kolom) yang saling terhubung, dinamakan model basis data... A. Hierarkis B. Jaringan C. Relasional ✅ D. Berorientasi Objek
+Proses menyusun struktur tabel dalam basis data relasional untuk meminimalkan redundansi (pengulangan) data dan mencegah anomali manipulasi data disebut proses... A. Enkripsi B. Normalisasi ✅ C. Integrasi D. Dekripsi
+Dalam hierarki organisasi data komputer, urutan dari elemen data yang terkecil hingga yang terbesar adalah... A. Bit - Byte - Record - Field - Database - File B. Byte - Bit - Field - Record - File - Database C. Bit - Byte - Field - Record - File - Database ✅ D. Field - Record - File - Database - Bit - Byte
+Proses penggalian dan analisis tumpukan data berskala sangat besar (Big Data) untuk menemukan pola, tren, atau korelasi yang tersembunyi guna mendukung keputusan strategis bisnis dinamakan... A. Data Warehousing B. Data Mining ✅ C. Data Encryption D. Data Validation
+Jaringan komputer yang menghubungkan komputer dan perangkat lain dalam area geografis yang terbatas, seperti dalam satu gedung kantor atau kampus, disebut... A. Local Area Network (LAN) ✅ B. Metropolitan Area Network (MAN) C. Wide Area Network (WAN) D. Personal Area Network (PAN)
+Sebuah jaringan privat milik perusahaan yang menggunakan teknologi internet dan protokol TCP/IP, namun secara eksklusif hanya dapat diakses oleh karyawan di dalam organisasi tersebut, dinamakan... A. Ekstranet B. Intranet ✅ C. Internet D. Virtual Private Network (VPN) Eksternal
+Topologi jaringan di mana semua komputer atau node dihubungkan secara terpusat pada satu perangkat hub atau switch dinamakan topologi... A. Ring (Cincin) B. Bus (Garis lurus) C. Star (Bintang) ✅ D. Mesh (Jaring)
+Protokol komunikasi standar yang menjadi bahasa utama pengiriman data di jaringan internet global adalah... A. HTTP/FTP B. TCP/IP (Transmission Control Protocol/Internet Protocol) ✅ C. OSI Layer D. SMTP
+Model layanan Cloud Computing (Komputasi Awan) di mana penyedia layanan menyediakan aplikasi perangkat lunak lengkap yang dapat diakses pengguna melalui internet (contoh: Google Workspace, Microsoft 365) disebut... A. Infrastructure as a Service (laaS) B. Platform as a Service (PaaS) C. Software as a Service (SaaS) ✅ D. Network as a Service (NaaS)
+Transaksi jual beli elektronik atau pertukaran data bisnis yang terjadi antara satu perusahaan (produsen) dengan perusahaan lain (distributor) dikenal dengan model E-Commerce... A. B2C (Business to Consumer) B. C2C (Consumer to Consumer) C. B2B (Business to Business) ✅ D. B2G (Business to Government)
+Kegiatan perdagangan atau pertukaran informasi secara elektronik di mana konsumen perorangan menjual produk/jasa langsung kepada konsumen perorangan lainnya (seperti di OLX atau pasar loak digital) dinamakan model... A. B2C B. C2C ✅ C. B2B D. G2C
+Pertukaran dokumen bisnis standar dari komputer satu perusahaan ke komputer perusahaan lain (seperti purchase order atau invoice) secara elektronik tanpa menggunakan kertas disebut... A. Electronic Data Interchange (EDI) ✅ B. E-Payment C. Digital Signature D. Mobile Commerce
+Siklus Hidup Pengembangan Sistem (System Development Life Cycle / SDLC) merupakan metodologi tradisional. Tahapan pertama dalam proses SDLC adalah... A. Perancangan Sistem (Design) B. Analisis Sistem (Analysis) C. Perencanaan Sistem (Planning / Investigation) ✅ D. Implementasi (Implementation)
+Pada tahap apakah seorang analis sistem mewawancarai pengguna (user), mengidentifikasi masalah, dan merumuskan spesifikasi kebutuhan informasi dari sistem yang akan dibangun... A. Tahap Analisis Sistem ✅ B. Tahap Perancangan Sistem C. Tahap Pengkodean (Coding) D. Tahap Pemeliharaan (Maintenance)
+Pendekatan pengembangan sistem di mana pengembang dengan cepat membangun versi awal (model kerja) dari sistem, kemudian dievaluasi oleh pengguna untuk terus diperbaiki hingga memenuhi kebutuhan, disebut metode... A. Waterfall B. Prototyping ✅ C. End-User Development D. Outsourcing
+Strategi implementasi/konversi dari sistem lama ke sistem baru, di mana sistem lama dimatikan secara total pada waktu tertentu dan sistem baru langsung digunakan sepenuhnya pada saat itu juga, disebut metode konversi... A. Paralel (Parallel) B. Bertahap (Phased) C. Uji Coba (Pilot) D. Langsung (Direct Cutover) ✅
+Perangkat pemodelan grafis yang digunakan dalam analisis terstruktur untuk menggambarkan aliran data, proses, sumber, dan tujuan data di dalam sebuah sistem dinamakan... A. Entity Relationship Diagram (ERD) B. Data Flow Diagram (DFD) ✅ C. Gantt Chart D. Flowchart Program
+Apabila sebuah perusahaan tidak memiliki staf TI yang kompeten dan memutuskan untuk menyerahkan seluruh pekerjaan pengembangan atau pengelolaan sistem informasinya kepada perusahaan vendor pihak ketiga, strategi ini disebut... A. Insourcing B. Outsourcing ✅ C. Prototyping D. Joint Application Design (JAD)
+Tiga pilar utama dalam keamanan informasi (dikenal dengan konsep CIA Triad) yang harus dilindungi oleh perusahaan adalah... A. Computer, Internet, Application B. Confidentiality, Integrity, Availability ✅ C. Control, Inspection, Audit D. Cost, Implementation, Accuracy
+Program jahat (malware) yang masuk ke dalam sistem komputer, mengenkripsi seluruh file milik pengguna, dan menuntut pembayaran (uang tebusan) agar file tersebut dapat diakses kembali dinamakan... A. Ransomware ✅ B. Spyware C. Adware D. Worm
+Serangan keamanan di mana peretas (hacker) membanjiri server suatu situs web dengan lalu lintas data palsu yang sangat tinggi sehingga situs tersebut menjadi down dan tidak bisa diakses pengguna sah, dinamakan serangan... A. SQL Injection B. Phishing C. Denial of Service (DoS / DDoS) ✅ D. Man in the Middle (MitM)
+Tindakan penipuan yang dilakukan dengan mengirimkan email palsu atau membuat situs web tiruan yang menyerupai institusi resmi (seperti bank) untuk memancing korban agar menyerahkan data pribadi (seperti password atau nomor kartu kredit) disebut... A. Phishing ✅ B. Spamming C. Hacking D. Keylogging
+Perangkat keras atau perangkat lunak yang ditempatkan di antara jaringan internal perusahaan dan internet (jaringan eksternal) untuk mencegah akses yang tidak sah disebut... A. Router B. Firewall ✅ C. Modem D. Switch
+Proses mengubah pesan atau data teks biasa (plaintext) menjadi kode acak rahasia (ciphertext) menggunakan algoritma matematika agar tidak dapat dibaca oleh pihak yang tidak berhak dinamakan... A. Dekripsi B. Enkripsi (Encryption) ✅ C. Otentikasi D. Otorisasi
+Hak setiap individu atau organisasi untuk membatasi akses orang lain terhadap data pribadi atau rahasianya, serta hak untuk dibiarkan sendiri tanpa pengawasan yang tidak sah, merupakan isu etika sistem informasi mengenai... A. Privasi (Privacy) ✅ B. Akurasi (Accuracy) C. Properti (Property) D. Aksesibilitas (Accessibility)
+Rencana komprehensif yang disiapkan oleh organisasi untuk memulihkan infrastruktur Tl dan melanjutkan operasi bisnis sesegera mungkin setelah terjadinya bencana alam atau serangan siber berskala besar dinamakan... A. System Development Life Cycle (SDLC) B. Disaster Recovery Plan (DRP) ✅ C. Risk Assessment D. Information Security Policy
+Teknologi atau bidang ilmu yang bertujuan untuk menciptakan sistem komputer dan perangkat lunak yang mampu meniru kecerdasan manusia, belajar dari pengalaman, dan memecahkan masalah kompleks dinamakan... A. Virtual Reality B. Artificial Intelligence (AI) ✅ C. Augmented Reality D. Business Intelligence
+Sistem berbasis komputer yang menangkap keahlian dan pengetahuan seorang atau beberapa ahli (pakar) di bidang tertentu untuk digunakan oleh non-pakar dalam memecahkan masalah diagnostik, dinamakan... A. Executive Support System B. Transaction Processing System C. Sistem Pakar (Expert System) ✅ D. Neural Networks
+Di dalam arsitektur Sistem Pakar, basis data spesifik yang menyimpan kumpulan fakta, aturan (rules), dan prosedur heuristik yang diekstrak dari pakar manusia dinamakan... A. Inference Engine (Mesin Inferensi) B. Knowledge Base (Basis Pengetahuan) ✅ C. User Interface (Antarmuka Pengguna) D. Working Memory
+Herbert A. Simon mengemukakan empat tahapan dalam proses pengambilan keputusan. Tahap pertama di mana manajer mengidentifikasi, mengamati lingkungan, dan memahami masalah yang terjadi disebut tahap... A. Design (Perancangan) B. Choice (Pemilihan) C. Intelligence (Penyelidikan) ✅ D. Implementation (Implementasi)
+Sistem informasi khusus yang menggunakan basis data spasial untuk menangkap, menyimpan, menganalisis, dan menampilkan informasi geografis (peta) untuk mendukung perencanaan dan keputusan dinamakan... A. EIS B. SIG (Sistem Informasi Geografis / GIS) ✅ C. ERP D. SCM
+Secara filosofis, tujuan paling utama mengapa manajemen perusahaan perlu berinvestasi besar-besaran untuk membangun dan mengimplementasikan Sistem Informasi Manajemen adalah untuk... A. Menggantikan seluruh peran manusia dengan robot B. Menghabiskan sisa anggaran tahunan perusahaan C. Meningkatkan efisiensi operasi bisnis dan mendukung pengambilan keputusan strategis demi menciptakan keunggulan kompetitif di pasar ✅ D. Memenuhi tuntutan regulasi tanpa ada manfaat ekonomi bagi perusahaan`;
+
+        let showAnswers = false;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            const lines = rawData.trim().split('\n');
+            let html = '';
+
+            lines.forEach((line, index) => {
+                if (!line.trim()) return;
+                
+                // Parse question and options
+                const parts = line.split(/(?= A\.| B\.| C\.| D\.)/g);
+                const qText = parts[0].trim();
+                const options = parts.slice(1).map(o => o.trim());
+
+                html += `<div class="question-block">`;
+                html += `<div class="question">${index + 1}. ${qText}</div>`;
+                html += `<ul class="options">`;
+                
+                options.forEach(opt => {
+                    const isCorrect = opt.includes('✅');
+                    const cleanOpt = opt.replace('✅', '').trim();
+                    const correctClass = (isCorrect && showAnswers) ? 'correct' : '';
+                    
+                    html += `<li class="option ${correctClass}" onclick="checkAnswer(this, ${isCorrect})">${cleanOpt}</li>`;
+                });
+                
+                html += `</ul></div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        window.checkAnswer = function(element, isCorrect) {
+            if (showAnswers) return; // if toggle is on, do nothing
+            
+            // clear peers
+            const peers = element.parentElement.children;
+            for(let i=0; i<peers.length; i++) {
+                peers[i].classList.remove('correct');
+                peers[i].style.backgroundColor = '';
+            }
+
+            if (isCorrect) {
+                element.classList.add('correct');
+            } else {
+                element.style.backgroundColor = '#f8d7da';
+                element.style.borderColor = '#f5c6cb';
+                element.style.color = '#721c24';
+            }
+        };
+
+        window.toggleAnswers = function() {
+            showAnswers = !showAnswers;
+            renderQuiz();
+        };
+
+        // Init
+        renderQuiz();
+    </script>
+</body>
+</html>

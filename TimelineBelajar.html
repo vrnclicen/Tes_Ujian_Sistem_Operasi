@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline & Tracker Belajar Ujian</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f7fa; color: #333; }
+        h1 { text-align: center; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .timeline-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 20px; }
+        .task { display: flex; align-items: center; padding: 12px; border-bottom: 1px solid #eee; transition: background 0.3s; }
+        .task:last-child { border-bottom: none; }
+        .task:hover { background-color: #f9f9f9; }
+        input[type="checkbox"] { transform: scale(1.5); margin-right: 15px; cursor: pointer; }
+        .task-details { display: flex; flex-direction: column; flex-grow: 1; }
+        .task-title { font-weight: bold; font-size: 16px; }
+        .task-date { font-size: 13px; color: #e74c3c; font-weight: bold; margin-top: 4px; }
+        .completed .task-title { text-decoration: line-through; color: #95a5a6; }
+        .completed .task-date { color: #95a5a6; }
+        .progress-container { margin-bottom: 20px; }
+        .progress-bar { width: 100%; background-color: #e0e0e0; border-radius: 5px; height: 20px; overflow: hidden; }
+        .progress-fill { height: 100%; background-color: #2ecc71; width: 0%; transition: width 0.4s ease; text-align: center; color: rgb(23, 22, 22); font-size: 13px; line-height: 20px; font-weight: bold;}
+    </style>
+</head>
+<body>
+
+    <h1>Timeline Belajar Ujian</h1>
+    
+    <div class="timeline-container">
+        <div class="progress-container">
+            <strong>Progress Belajar:</strong>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress">0%</div>
+            </div>
+        </div>
+
+        <div id="task-list">
+            <!-- Tugas 1 -->
+            <label class="task">
+                <input type="checkbox" onchange="updateProgress()">
+                <div class="task-details">
+                    <span class="task-title">Hafalan Soal dan Jawaban Sistem Informasi Manajemen</span>
+                    <span class="task-date">Deadline: 15 Juni 2026</span>
+                </div>
+            </label>
+
+            <!-- Tugas 2 -->
+            <label class="task">
+                <input type="checkbox" onchange="updateProgress()">
+                <div class="task-details">
+                    <span class="task-title">Hafalan Soal dan Jawaban Sistem Operasi</span>
+                    <span class="task-date">Deadline: 16 Juni 2026</span>
+                </div>
+            </label>
+
+            <!-- Tugas 3 -->
+            <label class="task">
+                <input type="checkbox" onchange="updateProgress()">
+                <div class="task-details">
+                    <span class="task-title">Tes Ujian Sistem Informasi Manajemen</span>
+                    <span class="task-date">Deadline: 17 Juni 2026</span>
+                </div>
+            </label>
+
+            <!-- Tugas 4 -->
+            <label class="task">
+                <input type="checkbox" onchange="updateProgress()">
+                <div class="task-details">
+                    <span class="task-title">Tes Ujian Sistem Operasi</span>
+                    <span class="task-date">Deadline: 18 Juni 2026</span>
+                </div>
+            </label>
+
+            <!-- Tugas 5 -->
+            <label class="task">
+                <input type="checkbox" onchange="updateProgress()">
+                <div class="task-details">
+                    <span class="task-title">Tes Ujian 2 MK (Sistem Informasi Manajemen & Sistem Operasi)</span>
+                    <span class="task-date">Deadline: 19 Juni 2026</span>
+                </div>
+            </label>
+            
+            <!-- Tugas 6 -->
+            <label class="task">
+                <input type="checkbox" onchange="updateProgress()">
+                <div class="task-details">
+                    <span class="task-title">Tes Ujian lagi di lokasi sebelum Ujian Asli</span>
+                    <span class="task-date">Deadline: 20 Juni 2026</span>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <script>
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let checkedCount = 0;
+
+            checkboxes.forEach(cb => {
+                const taskDiv = cb.closest('.task');
+                if (cb.checked) {
+                    checkedCount++;
+                    taskDiv.classList.add('completed');
+                } else {
+                    taskDiv.classList.remove('completed');
+                }
+            });
+
+            const percentage = Math.round((checkedCount / checkboxes.length) * 100);
+            const progressFill = document.getElementById('progress');
+            
+            progressFill.style.width = percentage + '%';
+            progressFill.textContent = percentage + '%';
+            
+            if(percentage === 100) {
+                progressFill.style.backgroundColor = '#27ae60';
+                progressFill.textContent = '100% - SIAP UJIAN!';
+            } else {
+                progressFill.style.backgroundColor = '#2ecc71';
+            }
+        }
+    </script>
+</body>
+</html>

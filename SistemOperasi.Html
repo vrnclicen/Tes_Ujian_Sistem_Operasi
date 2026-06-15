@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Sistem Operasi</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+        .question-block { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #ccc; }
+        .question { font-weight: bold; margin-bottom: 10px; }
+        .options { list-style-type: none; padding-left: 0; }
+        .option { margin-bottom: 5px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
+        .option:hover { background-color: #f0f0f0; }
+        .correct { background-color: #d4edda !important; border-color: #c3e6cb !important; color: #155724; font-weight: bold; }
+        h1 { text-align: center; color: #2c3e50; }
+        .btn-toggle { display: block; width: 100%; padding: 10px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-bottom: 20px; }
+        .btn-toggle:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <h1>Latihan Soal - Sistem Operasi (STSI4103 MSIM4201)</h1>
+    <button class="btn-toggle" onclick="toggleAnswers()">Tampilkan/Sembunyikan Semua Jawaban</button>
+    <div id="quiz-container"></div>
+
+    <script>
+        const rawData = `Perangkat lunak sistem yang bertugas untuk mengelola sumber daya perangkat keras komputer dan menyediakan layanan umum untuk aplikasi perangkat lunak lainnya disebut... A. Compiler B. Sistem Operasi ✅ C. Program Utilitas D. Sistem Manajemen Basis Data
+Komponen inti dari sebuah sistem operasi yang pertama kali dimuat ke dalam memori saat proses booting dan terus berjalan secara residen selama komputer menyala dinamakan... A. Shell B. Command Prompt C. Kernel ✅ D. Device Driver
+Antarmuka pengguna pada sistem operasi yang mengharuskan penggunanya untuk mengetikkan instruksi teks secara manual melalui keyboard dinamakan... A. Graphical User Interface (GUI) B. Touch User Interface C. Command Line Interface (CLI) ✅ D. Application Programming Interface (API)
+Konsep manajemen proses di mana beberapa program dapat dimuat sekaligus ke dalam memori utama sehingga CPU selalu memiliki pekerjaan untuk dieksekusi disebut... A. Multiprocessing B. Multiprogramming ✅ C. Multithreading D. Time-sharing
+Perluasan dari multiprogramming di mana CPU secara cepat berpindah-pindah giliran antar-proses yang sedang berjalan sehingga memberikan ilusi kepada pengguna bahwa semua program berjalan bersamaan disebut... A. Batch Processing B. Multitasking (Time-sharing) ✅ C. Asymmetric Processing D. Clustered System
+Dalam ilmu sistem operasi, sebuah program yang sedang dalam keadaan dieksekusi atau dijalankan oleh CPU secara teknis disebut sebagai... A. File B. Thread C. Job D. Proses ✅
+Struktur data sentral yang digunakan oleh sistem operasi untuk menyimpan semua informasi dan status (state) mengenai sebuah proses yang spesifik dinamakan... A. Page Table B. Process Control Block (PCB) ✅ C. File Allocation Table (FAT) D. Interrupt Vector
+Ketika suatu proses yang sedang berjalan meminta data dari disk dan harus menunggu operasi Input/Output selesai, maka sistem operasi akan mengubah status proses tersebut dari Running menjadi... A. Ready B. New C. Waiting (Blocked) ✅ D. Terminated
+Proses menyimpan status (state) dari proses yang saat ini sedang dieksekusi oleh CPU, kemudian memuat status dari proses lain yang mendapat giliran eksekusi berikutnya dinamakan... A. Context Switch ✅ B. Paging C. Swapping D. Interrupt
+Unit dasar terkecil dari penggunaan CPU yang berbagi ruang memori, kode program, dan sumber daya lainnya dengan thread lain di dalam proses yang sama disebut... A. Child Process B. Thread ✅ C. Socket D. Pipe
+Terdapat dua jenis thread, yaitu User-level thread dan Kernel-level thread. Salah satu keunggulan utama dari User-level thread adalah... A. Jika satu thread mengalami block, thread lain di proses yang sama tetap bisa berjalan B. Sepenuhnya dikelola dan dijadwalkan oleh kernel OS C. Proses pergantian (switching) lebih cepat karena tidak perlu intervensi mode kernel ✅ D. Lebih efisien dalam memanfaatkan arsitektur prosesor multi-core
+Komponen sistem operasi yang bertugas memilih dan menentukan proses mana dari Ready Queue yang akan dieksekusi selanjutnya oleh CPU adalah... A. Long-term scheduler B. Short-term scheduler (Penjadwal CPU) ✅ C. Medium-term scheduler D. Dispatcher
+Keputusan penjadwalan di mana CPU tidak dapat dipaksa untuk berpindah ke proses lain hingga proses yang sedang berjalan selesai atau meminta operasi I/O disebut penjadwalan... A. Preemptive B. Non-preemptive (Kooperatif) ✅ C. Round Robin D. Dynamic Scheduling
+Algoritma penjadwalan CPU paling sederhana di mana proses yang pertama kali tiba dan meminta CPU akan mendapatkan CPU pertama kali adalah... A. Shortest Job First (SJF) B. Round Robin (RR) C. First-Come, First-Served (FCFS) ✅ D. Priority Scheduling
+Efek konvoi (Convoy Effect) sering terjadi di mana proses-proses pendek harus menunggu sangat lama di belakang satu proses raksasa yang menguasai CPU. Hal ini merupakan kelemahan mutlak dari algoritma penjadwalan... A. SJF B. FCFS ✅ C. Round Robin D. Multilevel Feedback Queue
+Algoritma penjadwalan yang dirancang khusus untuk sistem time-sharing dengan memberikan kuantum waktu (time slice/quantum) tertentu kepada setiap proses secara bergiliran dinamakan... A. Priority B. FCFS C. SJF D. Round Robin (RR) ✅
+Suatu keadaan di mana proses dengan prioritas rendah tidak pernah mendapatkan giliran dieksekusi karena selalu didahului oleh proses-proses berprioritas tinggi dinamakan... A. Deadlock B. Thrashing C. Starvation ✅ D. Aging
+Solusi penanganan untuk mengatasi masalah starvation di mana sistem secara bertahap menaikkan prioritas sebuah proses yang telah menunggu terlalu lama disebut... A. Aging ✅ B. Swapping C. Paging D. Context Switching
+Kondisi fatal di mana beberapa proses secara bersamaan mencoba mengakses dan mengubah sebuah data bersama, sehingga nilai akhir data tersebut menjadi tidak valid dan bergantung pada urutan eksekusi terakhir disebut... A. Deadlock B. Race Condition ✅ C. Mutual Exclusion D. Critical Section
+Segmen kode program di mana suatu proses mengakses dan memanipulasi variabel atau file yang di- share secara bersama dengan proses lainnya dinamakan area... A. Kernel Space B. User Space C. Critical Section ✅ D. Entry Section
+Variabel integer khusus yang digunakan sebagai alat sinkronisasi proses untuk mengunci sumber daya menggunakan dua operasi standar (yaitu P/ wait dan V/ signal) dikemukakan oleh Dijkstra dan disebut dengan... A. Monitor B. Semaphore ✅ C. Mutex Lock D. Message Queue
+Kebuntuan total di mana sekumpulan proses tidak dapat berjalan sama sekali karena setiap proses memegang sumber daya dan pada saat yang sama menunggu sumber daya yang sedang dipegang oleh proses lain dalam kumpulan tersebut dinamakan... A. Starvation B. Race condition C. Livelock D. Deadlock ✅
+Untuk terjadinya deadlock, ada 4 (empat) kondisi yang harus terpenuhi secara bersamaan, yaitu Mutual Exclusion, Hold and Wait, Circular Wait, dan satu lagi adalah... A. No Preemption (Tidak ada paksaan pelepasan sumber daya) ✅ B. Preemption C. Starvation D. Context Switching
+Algoritma penghindaran kebuntuan (Deadlock Avoidance) yang terkenal karena menyimulasikan alokasi sumber daya bank sebelum menyetujui permintaan guna memastikan sistem selalu dalam keadaan aman (safe state) disebut algoritma... A. Dekker's Algorithm B. Peterson's Algorithm C. Banker's Algorithm ✅ D. Page Replacement Algorithm
+Perangkat keras yang berfungsi mengubah alamat logis (logical address) yang dihasilkan oleh CPU menjadi alamat fisik (physical address) di dalam memori utama disebut... A. CPU Scheduler B. Memory Management Unit (MMU) ✅ C. Direct Memory Access (DMA) D. Translation Look-aside Buffer (TLB)
+Proses memindahkan suatu proses secara keseluruhan dari memori utama ke dalam backing store (penyimpanan disk) untuk sementara, dan membawanya kembali ke memori saat akan dieksekusi dinamakan... A. Paging B. Swapping ✅ C. Spoofing D. Fragmentation
+Jika sisa total memori bebas yang ada sebenarnya cukup untuk memenuhi permintaan alokasi dari sebuah proses, namun memori tersebut tidak bisa digunakan karena terpecah-pecah menjadi lubang-lubang kecil yang tidak berurutan, kondisi ini disebut fragmentasi.... A. Internal B. Logika C. Eksternal ✅ D. Fisik
+Teknik manajemen memori non-contiguous yang memecah memori fisik menjadi blok-blok berukuran tetap yang disebut frame, dan memori logis dipecah menjadi blok berukuran sama yang disebut page adalah teknik... A. Partisi Dinamis B. Paging ✅ C. Segmentasi D. Alokasi Tetap
+Pada sistem paging, struktur data yang dikelola oleh sistem operasi untuk menyimpan peta pemetaan antara nomor page logis dengan nomor frame fisik di memori adalah... A. File Allocation Table (FAT) B. Page Table ✅ C. Access Matrix D. Inverted Table
+Sebuah memori cache perangkat keras yang sangat cepat dan asosiatif, digunakan khusus untuk menyimpan sebagian page table guna mempercepat proses translasi alamat logis ke alamat fisik dinamakan... A. L1 Cache B. Register C. TLB (Translation Look-aside Buffer) ✅ D. ROM
+Teknik yang memungkinkan pengeksekusian suatu proses di mana seluruh bagian programnya tidak harus berada secara utuh di dalam memori fisik (sehingga kapasitas program bisa melebihi kapasitas RAM) adalah konsep dasar dari... A. Swapping B. Virtual Memory ✅ C. Cache Memory D. Direct Memory Access
+Pada sistem memori virtual dengan metode demand paging, jika CPU mencoba mengakses instruksi pada suatu page yang saat ini belum ada di dalam memori fisik, maka akan memicu terjadinya... A. Page Fault ✅ B. System Crash C. Segmentation Fault D. Deadlock
+Algoritma penggantian halaman (page replacement) yang mengganti halaman yang memiliki catatan waktu paling lama tidak diakses atau digunakan di masa lalu dinamakan algoritma... A. First-In First-Out (FIFO) B. Optimal C. Least Recently Used (LRU) ✅ D. Not Recently Used (NRU)
+Sebuah fenomena anomali pada algoritma page replacement FIFO, di mana penambahan kapasitas jumlah frame di memori fisik justru menyebabkan meningkatnya frekuensi terjadinya page fault, dikenal dengan sebutan anomali... A. Belady ✅ B. Dijkstra C. Peterson D. Turing
+Kondisi kinerja sistem yang sangat buruk, di mana sistem operasi menghabiskan jauh lebih banyak waktu untuk sibuk menukar-nukar page (dari disk ke RAM dan sebaliknya) daripada mengeksekusi instruksi program dinamakan... A. Context Switching B. Paging C. Thrashing ✅ D. Fragmentation
+Unit penyimpanan logis terkecil dari data yang dikelola oleh sistem operasi dan disimpan di media penyimpanan sekunder fisik dinamakan... A. Direktori B. Sektor C. Blok D. File (Berkas) ✅
+Struktur direktori sistem file yang paling umum digunakan dalam OS modern, di mana sebuah direktori utama (root) dapat memiliki file dan subdirektori, serta subdirektori tersebut dapat memiliki subdirektori lagi di bawahnya, adalah struktur direktori berwujud... A. Single-level directory B. Two-level directory C. Tree-structured directory (Struktur pohon) ✅ D. Acyclic-graph directory
+Pada sistem operasi keluarga UNIX/Linux, struktur data yang berisi rincian atribut, kepemilikan, timestamp, dan lokasi penunjuk blok data dari sebuah file disimpan dalam sebuah struktur yang disebut... A. MBR (Master Boot Record) B. Inode (Index Node) ✅ C. File Control Block (FCB) D. Boot block
+Metode alokasi ruang disk untuk file yang mengelompokkan blok-blok data secara berurutan dalam satu garis alamat (contiguous). Kelemahan utama metode ini adalah... A. Proses pembacaan sekuensial yang sangat lambat B. Rentan mengalami fragmentasi eksternal dan sulit memperkirakan ukuran file di masa depan ✅ C. Memerlukan memori RAM yang besar untuk menyimpan tabel pointer D. Tidak mendukung metode akses langsung (direct access)
+Tabel alokasi file (metode linked allocation) yang dikumpulkan menjadi satu struktur khusus dan diletakkan di memori utama oleh sistem operasi DOS dan Windows awal dinamakan... A. Inode B. NTFS C. FAT (File Allocation Table) ✅ D. ext4
+Waktu mekanis yang dihabiskan oleh disk drive untuk menggerakkan dan memposisikan lengan head pembaca secara fisik menuju silinder/track tertentu yang diinginkan disebut waktu... A. Rotational Latency B. Transfer Time C. Seek Time ✅ D. Access Time
+Waktu tambahan yang dibutuhkan saat menunggu piringan magnetik berputar agar sektor data yang dituju berada tepat di bawah head pembaca disebut... A. Rotational Latency ✅ B. Seek Time C. Transfer Time D. Response Time
+Algoritma penjadwalan lengan disk (disk scheduling) yang memilih permintaan data yang jarak gerak head-nya paling dekat dengan posisi head saat ini dinamakan algoritma... A. FCFS B. C-SCAN C. Shortest Seek Time First (SSTF) ✅ D. SCAN (Algoritma Lift)
+Dalam rangka meningkatkan keandalan ( reliability) perlindungan data dan kinerja proses baca-tulis, banyak sistem menggunakan sekumpulan disk independen yang digabungkan dan diatur sistem operasi. Teknologi ini dikenal dengan sebutan... A. SAN (Storage Area Network) B. RAID (Redundant Array of Independent Disks) ✅ C. NAS (Network Attached Storage) D. SCSI
+Komponen hardware pengendali (controller) yang diberikan kewenangan oleh sistem operasi untuk menangani transfer blok data besar dari periferal (seperti disk) ke memori utama secara independen tanpa membebani CPU, dinamakan pengontrol... A. Direct Memory Access (DMA) ✅ B. Interrupt Controller C. Memory Management Unit (MMU) D. Southbridge
+Pola komunikasi peranti I/O di mana CPU terus-menerus mengecek secara berulang (dalam perulangan sibuk) status kesiapan device controller secara manual dinamakan metode... A. Interrupt-driven I/O B. DMA C. Polling (Busy-waiting) ✅ D. Spooling
+Guna melindungi sistem operasi dari eksekusi instruksi perusak oleh program aplikasi biasa, arsitektur OS membagi kewenangan tingkat eksekusi perangkat keras menjadi minimal dua mode, yaitu... A. Read mode dan Write mode B. Online mode dan Offline mode C. User mode dan Kernel mode ✅ D. System mode dan Network mode
+Model representasi keamanan akses sistem operasi secara abstrak yang merepresentasikan izin (hak akses) apa saja yang dimiliki oleh suatu subjek (pengguna) terhadap suatu objek (file/sumber daya) dalam bentuk baris dan kolom disebut... A. Access Matrix ✅ B. Password List C. Cryptographic Hash D. Firewall Rules
+Program berbahaya (malware) otonom yang menyebar dengan cara menyalin dirinya sendiri dari satu komputer ke komputer lain melintasi koneksi jaringan tanpa memerlukan penyisipan kode ke program inang (host program) lain disebut... A. Trojan Horse B. Virus C. Worm ✅ D. Spyware
+Kernel sistem operasi Linux yang banyak digunakan pada server dan superkomputer di seluruh dunia didistribusikan secara bebas dan berlisensi sumber terbuka (open source). Jenis lisensi perangkat lunak bebas yang umumnya digunakan oleh kernel Linux adalah... A. Proprietary License B. End-User License Agreement (EULA) C. Apache License D. GNU General Public License (GPL) ✅`;
+
+        let showAnswers = false;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            const lines = rawData.trim().split('\n');
+            let html = '';
+
+            lines.forEach((line, index) => {
+                if (!line.trim()) return;
+
+                // Parse question and options
+                const parts = line.split(/(?= A\.| B\.| C\.| D\.)/g);
+                const qText = parts[0].trim();
+                const options = parts.slice(1).map(o => o.trim());
+
+                html += `<div class="question-block">`;
+                html += `<div class="question">${index + 1}. ${qText}</div>`;
+                html += `<ul class="options">`;
+
+                options.forEach(opt => {
+                    const isCorrect = opt.includes('✅');
+                    const cleanOpt = opt.replace('✅', '').trim();
+                    const correctClass = (isCorrect && showAnswers) ? 'correct' : '';
+
+                    html += `<li class="option ${correctClass}" onclick="checkAnswer(this, ${isCorrect})">${cleanOpt}</li>`;
+                });
+
+                html += `</ul></div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        window.checkAnswer = function(element, isCorrect) {
+            if (showAnswers) return; // if toggle is on, do nothing
+
+            // clear peers
+            const peers = element.parentElement.children;
+            for(let i=0; i<peers.length; i++) {
+                peers[i].classList.remove('correct');
+                peers[i].style.backgroundColor = '';
+            }
+
+            if (isCorrect) {
+                element.classList.add('correct');
+            } else {
+                element.style.backgroundColor = '#f8d7da';
+                element.style.borderColor = '#f5c6cb';
+                element.style.color = '#721c24';
+            }
+        };
+
+        window.toggleAnswers = function() {
+            showAnswers = !showAnswers;
+            renderQuiz();
+        };
+
+        // Init
+        renderQuiz();
+    </script>
+</body>
+</html>
