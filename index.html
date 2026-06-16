@@ -3,24 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Belajar Ujian UT</title>
+    <title>Login - Belajar Ujian UT</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
         .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 450px; width: 100%; box-sizing: border-box; }
         h1 { color: #2c3e50; margin-bottom: 30px; font-size: 24px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        
+        /* Menu styles */
+        #menu-section { display: none; }
         .menu-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; margin-bottom: 15px; background-color: #3498db; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; transition: background 0.3s, transform 0.1s; box-sizing: border-box; }
         .menu-btn:hover { background-color: #2980b9; transform: translateY(-2px); }
         .menu-btn.timeline { background-color: #2ecc71; }
         .menu-btn.timeline:hover { background-color: #27ae60; }
+        
+        /* Login styles */
+        #login-section { display: block; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+        .input-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+        .login-btn { width: 100%; padding: 14px; background-color: #e74c3c; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; transition: background 0.3s; }
+        .login-btn:hover { background-color: #c0392b; }
+        .error-msg { color: #e74c3c; margin-top: 15px; font-size: 14px; display: none; font-weight: 500; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📚 Menu Belajar Ujian</h1>
         
-        <a href="TimelineBelajar.html" class="menu-btn timeline">📅 Timeline & Tracker Belajar</a>
-        <a href="SistemOperasi.Html" class="menu-btn">💻 Latihan Soal Sistem Operasi</a>
-        <a href="SistemInformasiMan.html" class="menu-btn">📊 Latihan Soal Sistem Informasi Manajemen</a>
+        <!-- BAGIAN LOGIN -->
+        <div id="login-section">
+            <h1>🔒 Login Akses</h1>
+            <p style="color: #7f8c8d; margin-bottom: 25px; font-size: 14px;">Halaman ini diproteksi. Masukkan Email dan Password.</p>
+            
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Contoh: user@email.com">
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Masukkan password rahasia...">
+            </div>
+            
+            <button class="login-btn" onclick="checkLogin()">Masuk</button>
+            <div class="error-msg" id="error">❌ Password salah! Akses ditolak.</div>
+        </div>
+
+        <!-- BAGIAN MENU (Awalnya disembunyikan) -->
+        <div id="menu-section">
+            <h1>📚 Menu Belajar Ujian</h1>
+            <a href="TimelineBelajar.html" class="menu-btn timeline">📅 Timeline & Tracker Belajar</a>
+            <a href="SistemOperasi.Html" class="menu-btn">💻 Latihan Soal Sistem Operasi</a>
+            <a href="SistemInformasiMan.html" class="menu-btn">📊 Latihan Soal Sistem Informasi Manajemen</a>
+        </div>
+
     </div>
+
+    <!-- Script Login & Tracking -->
+    <script>
+        if(sessionStorage.getItem("isLoggedIn") === "true") {
+            document.getElementById("login-section").style.display = "none";
+            document.getElementById("menu-section").style.display = "block";
+        }
+
+        function checkLogin() {
+            const email = document.getElementById("email").value;
+            const pass = document.getElementById("password").value;
+            const error = document.getElementById("error");
+            
+            if (!email) {
+                error.textContent = "❌ Harap masukkan email terlebih dahulu!";
+                error.style.display = "block";
+                return;
+            }
+
+            if (pass === "TesUjianByVerr") { 
+                
+                // MENGIRIM DATA LOGIN KE EMAIL VERONICA PAKAI FORMSUBMIT (Tanpa Daftar)
+                fetch("https://formsubmit.co/ajax/veronicalycen@gmail.com", {
+                    method: "POST",
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        _subject: "⚠️ Ada yang Login ke Web Ujian!",
+                        Email_Pengunjung: email,
+                        Waktu_Akses: new Date().toLocaleString(),
+                        Keterangan: "Seseorang baru saja berhasil login ke website Ujian UT kamu."
+                    })
+                }).catch(err => console.log("Tracker err", err));
+
+                sessionStorage.setItem("isLoggedIn", "true");
+                document.getElementById("login-section").style.display = "none";
+                document.getElementById("menu-section").style.display = "block";
+                error.style.display = "none";
+            } else {
+                error.textContent = "❌ Password salah! Akses ditolak.";
+                error.style.display = "block";
+            }
+        }
+
+        document.getElementById("password").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                checkLogin();
+            }
+        });
+    </script>
 </body>
 </html>
